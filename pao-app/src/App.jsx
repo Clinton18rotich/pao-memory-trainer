@@ -56,7 +56,7 @@ const PAO = {
   "51": {"person": "Medusa", "action": "Petrifying", "object": "a mirror", "bio": "A Gorgon who petrifies anyone who looks at her, even her own reflection.", "mnemonic": "51 looks like a snake head (5) staring into a mirror (1). Medusa petrifies."},
   "52": {"person": "Anubis", "action": "Weighing", "object": "a heart", "bio": "The Egyptian god who weighs the hearts of the dead on a golden scale.", "mnemonic": "52 looks like a scale (5) balancing a heart (2). Anubis weighs it."},
   "53": {"person": "Icarus", "action": "Melting", "object": "wax wings", "bio": "A boy who flew too close to the sun, melting his wax wings.", "mnemonic": "53 looks like a hook (5) dripping into a curly 3. Icarus melts."},
-  "54": {"person": "Godzilla", "action": "Stomping", "object": "Tokyo Tower", "bio": "A giant kaiju who stomps on Tokyo Tower with his massive feet.", "mnemonic": "54 looks like a giant foot (5) stomping a flag-tower (4). Godzilla stomps it."},
+  "54": {"person": "Godzilla", "action": "Crushing", "object": "Tokyo Tower", "bio": "A giant kaiju who crushes Tokyo Tower under his massive feet.", "mnemonic": "54 looks like a giant foot (5) crushing a flag-tower (4). Godzilla crushes it."},
   "55": {"person": "The Invisible Man", "action": "Looming", "object": "a raincoat", "bio": "An invisible scientist who looms inside an empty floating raincoat.", "mnemonic": "55 looks like two empty hooks (5-5). The Invisible Man looms in the raincoat."},
   "56": {"person": "Quetzalcoatl", "action": "Coiling", "object": "a pyramid", "bio": "A feathered serpent god who coils his massive body around pyramids.", "mnemonic": "56 looks like a snake body (5) coiling around a round pyramid (6). Quetzalcoatl coils."},
   "57": {"person": "Mothman", "action": "Glowing", "object": "red eyes", "bio": "A cryptid with giant, glowing red eyes that hover in the night sky.", "mnemonic": "57 looks like two glowing eyes (5 and 7). Mothman glows in the dark."},
@@ -73,7 +73,7 @@ const PAO = {
   "68": {"person": "Valkyrie", "action": "Guiding", "object": "a fallen warrior", "bio": "A winged maiden who guides fallen heroes to Valhalla.", "mnemonic": "68 looks like round wings (6) guiding a round soldier (8). Valkyrie guides."},
   "69": {"person": "Cerberus", "action": "Guarding", "object": "a gate", "bio": "The three-headed dog who guards the gates of the Underworld.", "mnemonic": "69 looks like two round heads (6 and 9). Cerberus guards the gate."},
   "70": {"person": "Frida Kahlo", "action": "Painting", "object": "a self-portrait", "bio": "A famous Mexican artist who paints surreal self-portraits.", "mnemonic": "70 looks like a brush (7) painting a round canvas (0). Frida paints a self-portrait."},
-  "71": {"person": "Nikola Tesla", "action": "Electrifying", "object": "a Tesla coil", "bio": "An inventor who electrifies the air with massive Tesla coils.", "mnemonic": "71 looks like a straight coil (7) electrifying a round spark (1). Tesla electrifies."},
+  "71": {"person": "Nikola Tesla", "action": "Sparking", "object": "a Tesla coil", "bio": "An inventor who electrifies the air with massive Tesla coils.", "mnemonic": "71 looks like a straight coil (7) sparking a round coil (1). Tesla sparks."},
   "72": {"person": "Marie Curie", "action": "Isolating", "object": "a radioactive isotope", "bio": "A physicist who isolates glowing radioactive elements from ore.", "mnemonic": "72 looks like a straight tool (7) isolating a round isotope (2). Marie isolates."},
   "73": {"person": "H.P. Lovecraft", "action": "Chanting", "object": "a Necronomicon", "bio": "A horror writer who chants incantations from the cursed Necronomicon.", "mnemonic": "73 looks like a straight finger (7) tracing a curly book (3). Lovecraft chants."},
   "74": {"person": "Joan of Arc", "action": "Rallying", "object": "a banner", "bio": "A peasant girl who rallies armies into battle holding a white banner.", "mnemonic": "74 looks like a straight arm (7) raising a flag (4). Joan rallies."},
@@ -96,7 +96,7 @@ const PAO = {
   "91": {"person": "Spartacus", "action": "Gladiating", "object": "a trident", "bio": "A gladiator who fights in the arena wielding a three-pronged trident.", "mnemonic": "91 looks like a round shield (9) holding a straight trident (1). Spartacus gladiates."},
   "92": {"person": "Frankenstein's Monster", "action": "Reanimating", "object": "a corpse", "bio": "A stitched creature reanimated from a corpse by a lightning bolt.", "mnemonic": "92 looks like a round head (9) reanimating a curved body (2). Frankenstein reanimates."},
   "93": {"person": "Jekyll & Hyde", "action": "Transforming", "object": "a potion", "bio": "A doctor who transforms into a monster by drinking a potion.", "mnemonic": "93 looks like a round head (9) transforming into a curly monster (3). Jekyll & Hyde transforms."},
-  "94": {"person": "Dracula", "action": "Sucking", "object": "a blood bag", "bio": "The vampire who sucks blood from a hospital blood bag on an IV pole.", "mnemonic": "94 looks like a round head (9) sucking from a flag-bag (4). Dracula sucks the blood bag."},
+  "94": {"person": "Nosferatu", "action": "Screeching", "object": "a coffin lid", "bio": "The vampire who sucks blood from a hospital blood bag on an IV pole.", "mnemonic": "94 looks like a round head (9) screeching as he lifts a flag-shaped coffin lid (4). Nosferatu screeches."},
   "95": {"person": "Rasputin", "action": "Surviving", "object": "poison", "bio": "A mad monk who survives drinking deadly cyanide poison.", "mnemonic": "95 looks like a round head (9) surviving a hooked poison (5). Rasputin survives."},
   "96": {"person": "Medea", "action": "Enchanting", "object": "a Golden Fleece", "bio": "A sorceress who enchants the Golden Fleece with dark magic.", "mnemonic": "96 looks like two round shapes (9 and 6). Medea enchants the Golden Fleece."},
   "97": {"person": "Odysseus", "action": "Sailing", "object": "a Trojan horse", "bio": "A clever king who sails across the sea towing a wooden Trojan horse.", "mnemonic": "97 looks like a round head (9) sailing a straight horse (7). Odysseus sails."},
@@ -198,7 +198,7 @@ function App() {
           <div className="row"><span className="label">Object:</span> <span className="value">{data.object}</span></div>
           <div className="bio">📖 {data.bio}</div>
           
-          {/* The NEW specific memory hook section */}
+          {/* Memory Hook */}
           {isValid && (
             <div className="memory-hook">
               <div className="hook-label">🧠 How to remember this number:</div>
@@ -287,7 +287,7 @@ function App() {
         </div>
       )}
 
-      {/* HELP / HOW-TO MODE (General Theory) */}
+      {/* HELP / HOW-TO MODE */}
       {mode === 'help' && (
         <div className="card help-card">
           <h2 style={{textAlign:'center', color:'#fca311', marginBottom: '20px'}}>🧠 How to Memorize 00–99</h2>
