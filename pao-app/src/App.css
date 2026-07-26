@@ -1,49 +1,273 @@
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #121212; color: #fff; }
-.container { max-width: 600px; margin: 0 auto; padding: 20px; }
-h1 { text-align: center; color: #fca311; }
-.menu { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
-.menu button { background: #333; color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; }
-.menu button.active { background: #fca311; color: #000; font-weight: bold; }
-.card { background: #1e1e1e; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-.number { font-size: 48px; font-weight: bold; text-align: center; color: #fca311; }
-.row { display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding: 10px 0; }
-.label { color: #aaa; }
-.value { font-weight: bold; }
-.bio { background: #252525; padding: 15px; border-radius: 8px; margin-top: 15px; font-style: italic; color: #ccc; }
-.input-group { display: flex; gap: 10px; margin-top: 15px; }
-.input-group input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #222; color: #fff; font-size: 16px; }
-.input-group button { padding: 12px 20px; background: #fca311; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-.btn-primary { width: 100%; padding: 12px; background: #fca311; color: #000; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-.flashcard-content { margin-top: 15px; }
-.score { text-align: center; font-size: 18px; margin: 10px 0; }
-input[type="text"] { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box; margin-top: 10px; font-size: 16px; }
+/* --- Mobile-First Base --- */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #121212;
+  color: #fff;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Container (Width limited for phone comfort) --- */
+.container {
+  width: 100%;
+  max-width: 500px; /* Prevents stretching on large phones/tablets */
+  margin: 0 auto;
+  padding: 16px 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Header --- */
+h1 {
+  text-align: center;
+  color: #fca311;
+  margin: 0 0 8px 0;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+}
+
+/* --- Menu (Touch-friendly tabs) --- */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.menu button {
+  flex: 1 1 auto;
+  min-width: 60px;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 12px 6px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  touch-action: manipulation;
+}
+.menu button.active {
+  background: #fca311;
+  color: #000;
+}
+.menu button:active {
+  transform: scale(0.95);
+}
+
+/* --- Cards (Main content area) --- */
+.card {
+  background: #1e1e1e;
+  padding: 20px 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  width: 100%;
+}
+
+/* --- Image & Number --- */
+.image-container {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.character-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fca311;
+  background: #2a2a2a;
+}
 .fallback-image {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #333;
+  background: #2a2a2a;
   color: #fca311;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   border: 3px solid #fca311;
   margin: 0 auto;
 }
+.number {
+  font-size: 44px;
+  font-weight: bold;
+  text-align: center;
+  color: #fca311;
+  margin: 8px 0 12px;
+}
+
+/* --- Rows (Labels & Values) --- */
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  font-size: 16px;
+}
+.row:last-child {
+  border-bottom: none;
+}
+.label {
+  color: #aaa;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.value {
+  font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* --- Bio & Memory Hook --- */
+.bio {
+  background: #252525;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-style: italic;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.memory-hook {
+  margin: 12px 0;
+  padding: 14px;
+  background: #1e2a1e;
+  border-left: 4px solid #4caf50;
+  border-radius: 8px;
+}
+.hook-label {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.hook-text {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* --- Teach Input Area (Big buttons for thumbs) --- */
+.teach-input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.teach-input {
+  flex: 2;
+  min-width: 120px;
+  padding: 14px 12px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+}
+.teach-input:focus {
+  border-color: #fca311;
+}
+.go-btn, .random-btn {
+  flex: 1;
+  min-width: 60px;
+  padding: 14px 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.go-btn {
+  background: #4caf50;
+  color: #fff;
+}
+.go-btn:active {
+  background: #388e3c;
+}
+.random-btn {
+  background: #fca311;
+  color: #000;
+}
+.random-btn:active {
+  background: #e0900e;
+}
+
+/* --- Flashcards --- */
+.flashcard-content {
+  margin-top: 12px;
+}
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: #fca311;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+  margin-top: 8px;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* --- Quiz Input --- */
+input[type="text"] {
+  width: 100%;
+  padding: 16px 14px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+input[type="text"]:focus {
+  border-color: #fca311;
+  outline: none;
+}
+
+/* --- Quiz Score --- */
+.score {
+  text-align: center;
+  font-size: 18px;
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+/* --- Table Mode --- */
 .table-card {
-  padding: 10px;
+  padding: 12px 8px;
 }
 .table-container {
   max-height: 70vh;
   overflow-y: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid #333;
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 14px;
 }
 thead {
   background: #222;
@@ -52,13 +276,13 @@ thead {
   z-index: 10;
 }
 th {
-  padding: 10px 5px;
+  padding: 14px 6px;
   text-align: left;
   color: #fca311;
   border-bottom: 2px solid #fca311;
 }
 td {
-  padding: 8px 5px;
+  padding: 12px 6px;
   border-bottom: 1px solid #333;
 }
 .num-col {
@@ -69,10 +293,9 @@ td {
 tr:nth-child(even) {
   background: #1a1a1a;
 }
-tr:hover {
+tr:active {
   background: #2a2a2a;
 }
-/* Scrollbar styling */
 .table-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -83,39 +306,51 @@ tr:hover {
 .table-container::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
-.teach-input-area {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-.teach-input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background: #222;
-  color: #fff;
+
+/* --- Help / How-To Mode --- */
+.help-card {
+  padding: 20px 16px;
   font-size: 16px;
-  text-align: center;
+  line-height: 1.6;
 }
-.random-btn {
-  padding: 12px 20px;
-  background: #fca311;
-  color: #000;
-  border: none;
-  border-radius: 8px;
+.help-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+.help-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.help-section h3 {
+  color: #fca311;
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+.help-example {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #222;
+  padding: 14px;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+.help-num {
+  font-size: 32px;
   font-weight: bold;
-  cursor: pointer;
+  color: #fca311;
+  min-width: 55px;
 }
-.go-btn {
-  padding: 12px 20px;
-  background: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
+.help-desc {
+  font-size: 15px;
+  color: #ccc;
 }
-.go-btn:hover {
-  background: #388e3c;
+.help-list {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.help-list li {
+  margin-bottom: 10px;
+  color: #ddd;
 }
